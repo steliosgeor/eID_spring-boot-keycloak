@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="layout :: headerFragment">
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron text-center">
+			<h1>eID Portal</h1>
+		</div>
+		<div>
+			<p>This is an eID portal!</p>
+
+			<h2>Please use your app to authenticate and then click on Login Page.</h2>
+			<div class="well">
+				<a th:href="@{/main_page}">Login Page</a>
+			</div>
+		</div>
+		<div id="pagefoot" th:include="layout :: footerFragment">
+		</div>
+	</div>
+	<!-- container -->
+
+</body>
+</html>
