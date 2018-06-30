@@ -4,29 +4,22 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.nio.file.attribute.UserPrincipal;
+
 import java.security.Principal;
 
-import org.apache.commons.logging.Log;
-import org.hibernate.mapping.Map;
-import org.keycloak.KeycloakPrincipal;
-import org.keycloak.KeycloakSecurityContext;
-import org.keycloak.admin.client.Keycloak;
-import org.keycloak.common.util.Base64.InputStream;
-import org.keycloak.representations.IDToken;
-import org.springframework.beans.factory.annotation.Autowired;
+import java.sql.*;
+import java.util.Properties;
 
 @Controller
 public class WebController {
 
  //   @Autowired
 //  private CustomerDAO customerDAO;
-
+	
     @GetMapping(path = "/")
     public String index() {
         return "external";
@@ -37,7 +30,8 @@ public class WebController {
     	String current_user = principal.getName();
     	System.out.println(principal.toString());
     	model.addAttribute("username", current_user);
-    	if(checkFido().equals("true")) {
+    	String AFM_num = getAFM(current_user);
+    	if(checkFido(AFM_num).equals("true")) {
     		return "main_page";
         }
     	
@@ -45,9 +39,9 @@ public class WebController {
     }
 
     // send HTTP request to check if the user is authenticated
-    public String checkFido() {
+    public String checkFido(String AFM) {
 
-    	String url = "http://localhost:8081/fidouaf/v1/stelios/123456789";
+    	String url = "http://localhost:8081/fidouaf/v1/stelios/"+AFM;
 		
     	try {
 		URL obj = new URL(url);
@@ -82,13 +76,27 @@ public class WebController {
     	}
     }
     
-   public void getAFM() {
+   public String getAFM(String username) {
     	
-	   			Keycloak kc = Keycloak.getInstance(
-			   "http://localhost:8180/auth",
-			   "SpringBootKeycloak", // the realm to log in to
-			   "stelios", "Stel.351994",  // the user
-	   			"security-admin-console");
+	   try {
+           String url = "jdbc:mysql://localhost:3306/eid";
+           Connection conn = DriverManager.getConnection(url,"root","root");
+           Statement stmt = conn.createStatement();
+           ResultSet rs;
+           System.out.println("here ok!");
+           rs = stmt.executeQuery("SELECT id FROM users WHERE username = \""+ username +"\";");
+           while ( rs.next() ) {
+               String id = rs.getString("id");
+               System.out.println(id);
+               return id;
+           }
+           conn.close();
+       } catch (Exception e) {
+           System.err.println("Got an exception! ");
+           System.err.println(e.getMessage());
+           
+       }
+	   return null;
     	
     }
 }
