@@ -44,8 +44,8 @@ public class WebController {
     	String current_user = principal.getName();
     	System.out.println(principal.toString());
     	model.addAttribute("username", current_user);
-    	String AFM_num = getAFM(current_user);
-    	if(checkFido(AFM_num).equals("true")) {
+    	//String AFM_num = getAFM(current_user);
+    	if(checkFido(current_user).equals("true")) {
     		return "eopyy_success";
         }
     	
@@ -57,8 +57,8 @@ public class WebController {
     	String current_user = principal.getName();
     	System.out.println(principal.toString());
     	model.addAttribute("username", current_user);
-    	String AFM_num = getAFM(current_user);
-    	if(checkFido(AFM_num).equals("true")) {
+    	//String AFM_num = getAFM(current_user);
+    	if(checkFido(current_user).equals("true")) {
     		return "main_page";
         }
     	
@@ -66,9 +66,9 @@ public class WebController {
     }
 
     // send HTTP request to check if the user is authenticated
-    public String checkFido(String AFM) {
+    public String checkFido(String username) {
 
-    	String url = "http://localhost:8081/fidouaf/v1/stelios/"+AFM;
+    	String url = "http://localhost:8081/fidouaf/v1/verification/"+username;
 		
     	try {
 		URL obj = new URL(url);
