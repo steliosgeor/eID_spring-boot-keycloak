@@ -20,9 +20,36 @@ public class WebController {
  //   @Autowired
 //  private CustomerDAO customerDAO;
 	
-    @GetMapping(path = "/")
+    /*@GetMapping(path = "/")
     public String index() {
         return "external";
+    }*/
+    
+    @GetMapping(path = "/")
+    public String index() {
+        return "main_1_page_1";
+    }
+    
+    @GetMapping(path = "/home_eopyy")
+    public String home_eopyy(Principal principal, Model model) {
+    	//String eopyy_user = principal.getName().toString();
+    	model.addAttribute("username", principal.getName());
+    	
+    	System.out.println(principal.getName().toString());
+    	return "home_eopyy";  
+    }
+    
+    @GetMapping(path = "/eopyy")
+    public String eopyy(Principal principal, Model model) {
+    	String current_user = principal.getName();
+    	System.out.println(principal.toString());
+    	model.addAttribute("username", current_user);
+    	String AFM_num = getAFM(current_user);
+    	if(checkFido(AFM_num).equals("true")) {
+    		return "eopyy_success";
+        }
+    	
+        return "eopyy_fail";
     }
 
     @GetMapping(path = "/main_page")

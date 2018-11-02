@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<title>Main_page</title>
+<meta charset="UTF-8"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"></link>
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Raleway"></link>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+<style>
+body, h1, h2, h3, h4, h5, h6 {
+	font-family: "Raleway", sans-serif
+}
+</style>
+<body class="w3-light-grey w3-content" style="max-width: 1600px">
+
+	<!-- Sidebar/menu -->
+	<nav class="w3-sidebar w3-collapse w3-white w3-animate-left"
+		style="z-index: 3; width: 300px;" id="mySidebar">
+		<br></br>
+		<div class="w3-container">
+			<a href="#" onclick="w3_close()"
+				class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey"
+				title="close menu"> <i class="fa fa-remove"></i>
+			</a> <img src="https://png2.kisspng.com/sh/b548825b219f311f9be0d45dd42dd142/L0KzQYm3VMI6N6R7j5H0aYP2gLBuTgBzcZ5qRd9ybnn2hLb5Tf9nNZh3fddsZT3rdb3zhf5qa154jNN9ZT3qgrbsi714aaMyTdNuNkO0RYW3Wck0PWMzSqUDOEK0RIK4VcI2OGQ6S6YDMEO8QnB3jvc=/kisspng-prime-minister-of-greece-hellenic-state-greek-war-5ae63154099352.2388214115250353480392.png" alt="KDP" style="width: 45%;"
+				class="w3-round"></img><br></br>
+			<br></br>
+			<h4>
+				<b>Ηλεκτρονική Διακυβέρνηση</b>
+			</h4>
+		</div>
+		<div class="w3-bar-block">
+			<a href="http://localhost:8080" onclick="w3_close()"
+				class="w3-bar-item w3-button w3-padding w3-text-teal"><i
+				class="fa fa-th-large fa-fw w3-margin-right"></i>Αρχική</a> <a
+				href="#about" onclick="w3_close()"
+				class="w3-bar-item w3-button w3-padding"><i
+				class="fa fa-user fa-fw w3-margin-right"></i>Πληροφορίες</a> <a
+				href="#contact" onclick="w3_close()"
+				class="w3-bar-item w3-button w3-padding"><i
+				class="fa fa-envelope fa-fw w3-margin-right"></i>Επικοινωνία</a>
+		</div>
+	</nav>
+
+	<!-- Overlay effect when opening sidebar on small screens -->
+	<div class="w3-overlay w3-hide-large w3-animate-opacity"
+		onclick="w3_close()" style="cursor: pointer" title="close side menu"
+		id="myOverlay"></div>
+
+	<!-- !PAGE CONTENT! -->
+	<div class="w3-main" style="margin-left: 300px">
+
+		<!-- Header -->
+		<header id="portfolio">
+			<a href="#"><img src="https://www.dropbox.com/s/qssowybe44v1k5m/avatar_g2.jpg?dl=0" alt="KDP"
+				style="width: 65px;"
+				class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></img></a>
+			<span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey"
+				onclick="w3_open()"><i class="fa fa-bars"></i></span>
+			<div class="w3-container">
+				<h1>
+					<b>Κεντρική Διαδικτυακή Πύλη</b>
+				</h1>
+				<div class="w3-section w3-bottombar w3-padding-16">
+					<span class="w3-margin-right">Κατηγορίες:</span>
+					<button class="w3-button w3-black">Όλες</button>
+					<button class="w3-button w3-white">
+						<i class="fa fa-ambulance w3-margin-right"></i>Υγεία
+					</button>
+					<button class="w3-button w3-white w3-hide-small">
+						<i class="fa fa-graduation-cap w3-margin-right"></i>Εκπαίδευση
+					</button>
+					<button class="w3-button w3-white w3-hide-small">
+						<i class="fa fa-money w3-margin-right"></i>Οικονομία
+					</button>
+				</div>
+			</div>
+		</header>
+
+		<!-- First Photo Grid-->
+		<div class="w3-row-padding">
+			<a href="/home_eopyy">
+				<button type="button" class="w3-third w3-container w3-margin-bottom" >
+					<img src="https://www.eopyy.gov.gr/Template/images/logo_top.png" alt="Norway" style="width: 85%"
+						class="w3-hover-opacity"></img>
+				</button>
+			</a>
+			<a href="http://localhost:8080/home_eopyy">
+				<button type="button" class="w3-third w3-container w3-margin-bottom">
+					<img src="https://ergasiatora.gr/wp-content/uploads/2018/01/TAXISNET.jpg" alt="Norway" style="width: 87%"
+						class="w3-hover-opacity"></img>
+				</button>
+			</a>
+			<a href="http://localhost:8080/home_eopyy">
+				<button type="button" class="w3-third w3-container w3-margin-bottom">
+					<img src="https://upload.wikimedia.org/wikipedia/el/f/f6/Pyrforos2.JPG" alt="Norway" style="width: 71%"
+						class="w3-grey"></img>
+
+				</button>
+			</a>
+		</div>
+		
+		<!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+    </div>
+  </div>
+		<div class="w3-container w3-padding-large" style="margin-bottom:32px">
+    <h4><b>Σχετικά με την ΚΔΠ</b></h4>
+    <p>Η ΚΔΠ αποτελεί τον πυρήνα των υπηρεσιών ηλεκτρονικής διακυβέρνησης στην Ελλάδα. Για να χρησιμοποιήσετε τις υπηρεσίες της ηλεκτρονικής διακυβέρνησης απαιτείται η εγκατάσταση της εφαρμογής ηλεκτρονικής ταυτότητας πολίτη (greek eID).</p>
+	</div>
+		 <!-- Contact Section -->
+  <div class="w3-container w3-padding-large w3-grey">
+    <h4 id="contact"><b>Επικοινωνία</b></h4>
+    <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
+      <div class="w3-third w3-dark-grey">
+        <p><i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i></p>
+        <p>central_gate@ypes.gr</p>
+      </div>
+      <div class="w3-third w3-teal">
+        <p><i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i></p>
+        <p>Αθήνα, Κέντρο</p>
+      </div>
+      <div class="w3-third w3-dark-grey">
+        <p><i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i></p>
+        <p>213 13 64 000</p>
+      </div>
+    </div>
+    <hr class="w3-opacity">
+    <form action="/action_page.php" target="_blank">
+      <div class="w3-section">
+        <label>Ονοματεπώνυμο</label>
+        <input class="w3-input w3-border" type="text" name="Name"></input>
+      </div>
+      <div class="w3-section">
+        <label>Email</label>
+        <input class="w3-input w3-border" type="text" name="Email"></input>
+      </div>
+      <div class="w3-section">
+        <label>Περιεχόμενο Μηνύματος</label>
+        <input class="w3-input w3-border" type="text" name="Message"></input>
+      </div>
+      <button type="submit" class="w3-button w3-black w3-margin-bottom"><i class="fa fa-paper-plane w3-margin-right"></i>Αποστολή</button>
+    </form></hr>
+  </div>
+  <div class="w3-black w3-center w3-padding-24">Powered by <a href="http://www.ypes.gr/el/" title="ypes.gr" target="_blank" class="w3-hover-opacity">ypes.gr</a></div>
+		<!-- End page content -->
+	</div>
+
+
+</body>
+</html>

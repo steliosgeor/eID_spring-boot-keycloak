@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="layout :: headerFragment">
+</head>
+<body>
+	<style>
+.column {
+	float: left;
+	padding: 10px;
+}
+
+.left {
+	width: 20%;
+}
+
+.right {
+	width: 80%;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+</style>
+	<div class="column left">
+		<img border="0" src="avatar_g2.jpg" alt="KDP" height="100" width="150"></img>
+		
+		<div>
+			<a href="#" onclick="w3_close()" title="close menu"> </a>
+
+			<h2>
+				<b>Κρατικές Υπηρεσίες</b>
+			</h2>
+		</div>
+		<div>
+			<a href="#portfolio" onclick="w3_close()"><i></i>ΑΡΧΙΚΗ</a> <a
+				href="#about" onclick="w3_close()"><i></i>ΠΡΟΦΙΛ</a> <a
+				href="#contact" onclick="w3_close()"><i></i>ΕΠΙΚΟΙΝΩΝΙΑ</a>
+		</div>
+	</div>
+	<!-- container -->
+</body>
+</html>

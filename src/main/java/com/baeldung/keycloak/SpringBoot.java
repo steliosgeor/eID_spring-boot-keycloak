@@ -2,6 +2,9 @@ package com.baeldung.keycloak;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.repository.CrudRepository;
+
+
 
 @SpringBootApplication
 
